@@ -1,6 +1,4 @@
 /* Global Variables */
-// Personal API Key for OpenWeatherMap API
-
 
 
 // Create a new date instance dynamically with JS
@@ -19,11 +17,11 @@ function displayAction() {
 	const zip = document.getElementById("zip").value;
 	const feelings = document.getElementById("feelings").value;
 
-	getDataApi(baseURL, zip, apiKey)
+	getData(baseURL, zip, apiKey)
 		.then(function (data) {
 			// Add data
 			console.log("Add data from api: ", data);
-			postDataApi("/addWeatherData", {
+			postData("/addWeatherData", {
 				temperature: data.main.temp,
 				date: newDate,
 				feel: feelings,
@@ -34,20 +32,21 @@ function displayAction() {
 
 // Async GET
 /* Function to GET Web API Data*/
-const getDataApi = async (baseURL, zip, apiKey) => {
+const getData = async (baseURL, zip, apiKey) => {
 
-		const url = `${baseURL}${zip}${apiKey}`;
-
+		//const url = `${baseURL}${zip}${apiKey}`;
+		const url = baseURL + zip + apiKey;
 		const request = await fetch(url); // The API Key variable is passed as a parameter to fetch()
 
 		try {
 			const allData = await request.json(); // Transform into JSON
 
-			if (allData.message) {
-				alert(allData.message);
-			} else {
-				return allData;
-			}
+			//if (allData.message) {
+			//	alert(allData.message);
+			//} else {
+			//	return allData;
+			//}
+			console.log(allData);
 		} catch (error) { // appropriately handle the error
 			console.log("error", error);
 		}
@@ -56,7 +55,7 @@ const getDataApi = async (baseURL, zip, apiKey) => {
 // Async POST
 /* Function to POST data */
 // Async POST
-const postDataApi = async (url = "", data = {}) => {
+const postData = async (url = "", data = {}) => {
 	console.log("POST weather data: ", data);
 	const response = await fetch(url, {
 		method: "POST",
