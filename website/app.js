@@ -34,18 +34,13 @@ function displayAction() {
 /* Function to GET Web API Data*/
 const getData = async (baseURL, zip, apiKey) => {
 
-		//const url = `${baseURL}${zip}${apiKey}`;
+		
 		const url = baseURL + zip + apiKey;
 		const request = await fetch(url); // The API Key variable is passed as a parameter to fetch()
 
 		try {
 			const allData = await request.json(); // Transform into JSON
-
-			//if (allData.message) {
-			//	alert(allData.message);
-			//} else {
-			//	return allData;
-			//}
+			
 			console.log(allData);
 		} catch (error) { // appropriately handle the error
 			console.log("error", error);
