@@ -33,18 +33,22 @@ function displayAction() {
 // Async GET
 /* Function to GET Web API Data*/
 const getData = async (baseURL, zip, apiKey) => {
-
 		
 		const url = baseURL + zip + apiKey;
 		const request = await fetch(url); // The API Key variable is passed as a parameter to fetch()
-
 		try {
-			const allData = await request.json(); // Transform into JSON
-			
-			console.log(allData);
-		} catch (error) { // appropriately handle the error
+			// Transform into JSON
+			const allData = await request.json();
+			if (allData.message) {
+				alert(allData.message);
+			} else {
+				return allData;
+			}
+		} catch (error) {
 			console.log("error", error);
+			// appropriately handle the error
 		}
+
     };
 
 // Async POST
