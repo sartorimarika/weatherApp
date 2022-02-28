@@ -3,7 +3,7 @@
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
 
 // Personal API Key for OpenWeatherMap API
 const apiKey = "&appid=a7248850bf64c68b9518886a3e506b89&units=imperial";
@@ -53,7 +53,6 @@ const getData = async (baseURL, zip, apiKey) => {
 
 // Async POST
 /* Function to POST data */
-// Async POST
 const postData = async (url = "", data = {}) => {
 	console.log("POST weather data: ", data);
 	const response = await fetch(url, {
