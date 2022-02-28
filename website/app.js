@@ -22,9 +22,12 @@ function displayAction() {
 			// Add data
 			console.log("Add data from api: ", data);
 			postData("/addWeatherData", {
-				temperature: data.main.temp,
+				temperature: Math.round(data.main.temp),
+				description: data.weather[0].description,
+				icon: data.weather[0].icon,
 				date: newDate,
 				feel: feelings,
+				city: data.name,
 			});
 		})
 		.then(() => updateUI());
@@ -59,14 +62,15 @@ const postData = async (url = "", data = {}) => {
 		method: "POST",
 		credentials: "same-origin",
 		headers: {
-			"Content-Type": "application/json",
+			"Content-Type": "application/json"
 		},
 		body: JSON.stringify(data), // body data type must match "Content-Type" header
 	});
 
 	try {
 		const newData = await response.json();
-		console.log("post res: ", newData);
+		return newData;
+		console.log("post response: ", newData);
 	} catch (error) {
 		console.log("error", error);
 	}
@@ -80,7 +84,10 @@ const updateUI = async () => {
 		console.log("updateUI: ", data);
 		document.getElementById("date").innerHTML = `Date: ${data.date}`;
 		document.getElementById("temp").innerHTML = `Temperature: ${data.temperature}`;
+		document.getElementById("date").innerHTML = `Description: ${data.weather[0].description}`;
+		document.getElementById("temp").innerHTML = `${data.weather[0].icon}`;
 		document.getElementById("content").innerHTML = `Feelings: ${data.feel}`;
+		document.getElementById("city").innerHTML = `City: ${data.name}`;
 	} catch (error) {
 		console.log("error", error);
 	}

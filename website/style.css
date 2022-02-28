@@ -11,10 +11,9 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    
+    grid-auto-rows: minmax(130px, auto);
     /* grid-template-columns:  */
-    height:100vh;
+    
     background: linear-gradient(180deg, rgba(185,214,240,1) 0%, rgba(222,108,131,1) 100%);
     color: #051923;
     justify-content: center;
@@ -25,26 +24,33 @@ body{
 }
 
 
-.holder{
-    /* border: 2px solid blue; */
+.zip {
+    width: 400px;
     justify-self: center;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+    align-items: center;
 }
 
+.entry {
+    border: 3px solid black;
+    margin-top: 2rem;
+    
+}
 
 .headline{
     font-size: 2em;
     
 }
-.zip{
-    width: 400px;
-}
+
 .feel{
     border: 1px solid yellow;
     display: flex;
     flex-direction: column;
     row-gap: 1em;
     height: 200px;
-
+    align-items: center;
 
 }
 
@@ -105,7 +111,7 @@ input{
 }
 
 button{
-    width: 400px;
+    width: 320px;
     height: 100px;
     background: #3b4a6b;
     color: #e0e0e0;
