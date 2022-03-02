@@ -13,14 +13,12 @@ body{
     display: grid;
     grid-auto-rows: minmax(130px, auto);
     /* grid-template-columns:  */
-    
     background: linear-gradient(180deg, rgba(185,214,240,1) 0%, rgba(222,108,131,1) 100%);
     color: #051923;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
-    border: 2px solid black;
 }
 
 
@@ -29,12 +27,10 @@ body{
     justify-self: center;
     display: flex;
     flex-direction: column;
-    border: 1px solid orange;
     align-items: center;
 }
 
 .entry {
-    border: 3px solid black;
     margin-top: 2rem;
     
 }
@@ -45,7 +41,6 @@ body{
 }
 
 .feel{
-    border: 1px solid yellow;
     display: flex;
     flex-direction: column;
     row-gap: 1em;
@@ -60,7 +55,6 @@ input, textarea {
 
 .entry{
     background: rgba(59, 74, 107, .4);
-    border: 1px solid green;
     height: 150px;
     width: 400px;
 }

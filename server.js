@@ -41,9 +41,9 @@ function sendData(req, res) {
 }
 
 // POST route
-app.post("/addWeatherData", addWeatherData);
+app.post("/add", add);
 
-function addWeatherData(req, res) {
+function add(req, res) {
 	projectData = req.body;
 	res.send(projectData);
 }

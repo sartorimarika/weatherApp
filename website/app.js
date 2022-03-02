@@ -21,7 +21,7 @@ function displayAction() {
 		.then(function (data) {
 			// Add data
 			console.log("Add data from api: ", data);
-			postData("/addWeatherData", {
+			postData("/add", {
 				temperature: Math.round(data.main.temp),
 				description: data.weather[0].description,
 				icon: data.weather[0].icon,
