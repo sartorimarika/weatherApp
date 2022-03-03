@@ -84,10 +84,10 @@ const updateUI = async () => {
 		console.log("updateUI: ", data);
 		document.getElementById("date").innerHTML = `Date: ${data.date}`;
 		document.getElementById("temp").innerHTML = `Temperature: ${data.temperature}`;
-		document.getElementById("date").innerHTML = `Description: ${data.weather[0].description}`;
-		document.getElementById("temp").innerHTML = `${data.weather[0].icon}`;
 		document.getElementById("content").innerHTML = `Feelings: ${data.feel}`;
-		document.getElementById("city").innerHTML = `City: ${data.name}`;
+	//	document.getElementById("description").innerHTML = `Description: ${data.weather[0].description}`;
+	//	document.getElementById("icon").innerHTML = `${data.weather[0].icon}`;
+	//	document.getElementById("city").innerHTML = `City: ${data.name}`;
 	} catch (error) {
 		console.log("error", error);
 	}
