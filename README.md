@@ -1,3 +1,3 @@
 # weatherApp
 
-https://sartorimarika.github.io/weatherApp/
+github.com/sartorimarika/weatherApp/website/index.html
